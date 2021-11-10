@@ -13,6 +13,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.jiahaoliuliu.simpleuicompose.theme.ComposeTutorialTheme
 
 data class Message(val author: String, val body: String)
 
@@ -20,7 +21,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MessageCard(Message("Android", "Jetpack Compose"))
+//            MessageCard(Message("Android", "Jetpack Compose"))
+            ComposeTutorialTheme {
+                MessageCard(Message("Android", "Jetpack Compose"))
+            }
         }
     }
 
@@ -59,8 +63,10 @@ class MainActivity : AppCompatActivity() {
     @Preview
     @Composable
     fun PreviewMessageCard() {
-        MessageCard(
-            msg = Message("Colleage", "Hey, take a look at Jetpack Compose, it's great")
-        )
+        ComposeTutorialTheme {
+            MessageCard(
+                msg = Message("Colleague", "Hey, take a look at Jetpack Compose, it's great")
+            )
+        }
     }
 }
